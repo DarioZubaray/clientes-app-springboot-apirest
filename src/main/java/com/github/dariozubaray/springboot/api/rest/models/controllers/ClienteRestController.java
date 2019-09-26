@@ -63,12 +63,12 @@ public class ClienteRestController {
         try {
             clienteCreado = clienteService.save(cliente);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la actualizacion en la BD");
+            response.put("mensaje", "Error al ejecutar la actualización en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        response.put("mensaje", "El cliente ha sido creado con exito");
+        response.put("mensaje", "El cliente ha sido creado con éxito");
         response.put("cliente", clienteCreado);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -109,12 +109,12 @@ public class ClienteRestController {
         try {
             clienteActualizado = clienteService.save(clienteDB);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la actualizacion en la BD");
+            response.put("mensaje", "Error al ejecutar la actualización en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        response.put("mensaje", "El cliente ha sido actualizado con exito");
+        response.put("mensaje", "El cliente ha sido actualizado con éxito");
         response.put("cliente", clienteActualizado);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -126,12 +126,12 @@ public class ClienteRestController {
         try {
             clienteService.delete(id);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la eliminacion en la BD");
+            response.put("mensaje", "Error al ejecutar la eliminación en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        response.put("mensaje", "El cliente ha sido eliminado con exito");
+        response.put("mensaje", "El cliente ha sido eliminado con éxito");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
