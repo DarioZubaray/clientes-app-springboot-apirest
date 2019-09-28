@@ -4,3 +4,12 @@ INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Julieta', 'Zu
 INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Agustin', 'Zubaray', 'azubaray@mail.com', '2019-07-18')
 INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Benjamin', 'Zubaray', 'bzubaray@mail.com', '2019-09-07')
 INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Lola', 'Rosa Zubaray', 'lrosa@mail.com', '2019-04-10')
+
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Erich', 'Gamma', 'egamma@mail.com', '2019-04-10')
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('John', 'Vlissides', 'jvlissides@mail.com', '2019-04-10')
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Richard', 'Helm', 'rhelm@mail.com', '2019-04-10')
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Ralph', 'Johnson', 'rjohnson@mail.com', '2019-04-10')
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Joshua', 'Bloch', 'jbloch@mail.com', '2019-04-10')
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Robert C', 'Martin', 'rmartin@mail.com', '2019-04-10')
+INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Craig', 'Walls', 'rwalls@mail.com', '2019-04-10')
+	
