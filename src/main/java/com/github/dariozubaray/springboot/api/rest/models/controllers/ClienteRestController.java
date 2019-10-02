@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.github.dariozubaray.springboot.api.rest.models.entity.Cliente;
+import com.github.dariozubaray.springboot.api.rest.models.entity.Region;
 import com.github.dariozubaray.springboot.api.rest.models.services.IClienteService;
 import com.github.dariozubaray.springboot.api.rest.models.services.IUploadFileService;
 
@@ -151,6 +152,7 @@ public class ClienteRestController {
         if (cliente.getCreateAt() != null) {
             clienteDB.setCreateAt(cliente.getCreateAt());
         }
+        clienteDB.setRegion(cliente.getRegion());
 
         try {
             clienteActualizado = clienteService.save(clienteDB);
@@ -223,5 +225,10 @@ public class ClienteRestController {
         HttpHeaders cabecera = new HttpHeaders();
         cabecera.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + recurso.getFilename() + "\"");
         return new ResponseEntity<>(recurso, cabecera, HttpStatus.OK);
+    }
+
+    @GetMapping("/clientes/regiones")
+    public List<Region> listarRegion() {
+        return clienteService.findAllRegiones();
     }
 }

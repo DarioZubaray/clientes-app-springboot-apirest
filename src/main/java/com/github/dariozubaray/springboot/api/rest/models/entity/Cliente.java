@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -14,6 +17,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "clientes")
@@ -43,6 +47,12 @@ public class Cliente implements Serializable {
     private Date createAt;
 
     private String foto;
+
+    @NotNull(message = "la region no puede estar vacia.")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "region_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Region region;
 
     public Long getId() {
         return id;
@@ -90,6 +100,14 @@ public class Cliente implements Serializable {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 
 }

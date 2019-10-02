@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.github.dariozubaray.springboot.api.rest.models.dao.IClienteDao;
 import com.github.dariozubaray.springboot.api.rest.models.entity.Cliente;
+import com.github.dariozubaray.springboot.api.rest.models.entity.Region;
 
 @Service
 public class ClienteServiceImpl implements IClienteService {
@@ -43,6 +44,12 @@ public class ClienteServiceImpl implements IClienteService {
     @Transactional
     public void delete(Long id) {
         clienteDao.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Region> findAllRegiones() {
+        return clienteDao.findAllRegiones();
     }
 
 }
