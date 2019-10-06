@@ -23,10 +23,10 @@ INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (3, 
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (4, 'Robert C', 'Martin', 'rmartin@mail.com', '2019-04-10')
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (1, 'Craig', 'Walls', 'rwalls@mail.com', '2019-04-10')
 
-INSERT INTO usuarios (username, password, enabled) VALUES ('dario', '$2a$10$N05.w4rbGY1EMC5N21IuruS7PeVz54vCF/b5kqRBPRVsa9Ey1D0o2', 1)
-INSERT INTO usuarios (username, password, enabled) VALUES ('admin', '$2a$10$vF5QIpdbCvtl/h5mBYyjB.aQV0jXgh1k5YBlM1eJ0WFOZ5YaE80lC', 1)
-INSERT INTO usuarios (username, password, enabled) VALUES ('usuario', '$2a$10$Y3iuApVlx/xUWyPrljIqy.Tk8t4a.XZCzmdH4r9ICJMvteMZ2kq5q', 1)
-INSERT INTO usuarios (username, password, enabled) VALUES ('invitado', '$2a$10$tYTCR67.D4eKG1aeojw8huht9R/1RaplaDdqFFxt8/lFnsF97uIU2', 1)
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('dario', '$2a$10$N05.w4rbGY1EMC5N21IuruS7PeVz54vCF/b5kqRBPRVsa9Ey1D0o2', 1, 'Dario', 'Zubaray', 'dzubary@mail.com')
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('admin', '$2a$10$vF5QIpdbCvtl/h5mBYyjB.aQV0jXgh1k5YBlM1eJ0WFOZ5YaE80lC', 1, 'Julieta', 'Zubaray', 'jzubaray@mail.com')
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('usuario', '$2a$10$Y3iuApVlx/xUWyPrljIqy.Tk8t4a.XZCzmdH4r9ICJMvteMZ2kq5q', 1, 'Agustin', 'Zubaray', 'azubaray@mail.com')
+INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) VALUES ('invitado', '$2a$10$tYTCR67.D4eKG1aeojw8huht9R/1RaplaDdqFFxt8/lFnsF97uIU2', 1, 'Benjamin', 'Zubaray', 'bzubaray@mail.com')
 
 INSERT INTO roles (nombre) VALUES ('ROLE_USER')
 INSERT INTO roles (nombre) VALUES ('ROLE_ADMIN')
