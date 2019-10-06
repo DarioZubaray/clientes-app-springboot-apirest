@@ -17,7 +17,7 @@ import com.github.dariozubaray.springboot.api.rest.models.dao.IUsuarioDao;
 import com.github.dariozubaray.springboot.api.rest.models.entity.Usuario;
 
 @Service
-public class UsuarioService implements UserDetailsService {
+public class UsuarioService implements IUsuarioService, UserDetailsService {
 
     private Logger logger = LoggerFactory.getLogger(UsuarioService.class);
 
@@ -53,6 +53,11 @@ public class UsuarioService implements UserDetailsService {
                         accountNonLocked,
                         authorities);
        // @formatter:on
+    }
+
+    @Override
+    public Usuario findByUsername(String username) {
+        return usuarioDao.findByUsername(username);
     }
 
 }
