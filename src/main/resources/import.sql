@@ -23,5 +23,17 @@ INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (3, 
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (4, 'Robert C', 'Martin', 'rmartin@mail.com', '2019-04-10')
 INSERT INTO clientes (region_id, nombre, apellido, email, create_at) VALUES (1, 'Craig', 'Walls', 'rwalls@mail.com', '2019-04-10')
 
+INSERT INTO usuarios (username, password, enabled) VALUES ('dario', '$2a$10$N05.w4rbGY1EMC5N21IuruS7PeVz54vCF/b5kqRBPRVsa9Ey1D0o2', 1)
+INSERT INTO usuarios (username, password, enabled) VALUES ('admin', '$2a$10$vF5QIpdbCvtl/h5mBYyjB.aQV0jXgh1k5YBlM1eJ0WFOZ5YaE80lC', 1)
+INSERT INTO usuarios (username, password, enabled) VALUES ('usuario', '$2a$10$Y3iuApVlx/xUWyPrljIqy.Tk8t4a.XZCzmdH4r9ICJMvteMZ2kq5q', 1)
+INSERT INTO usuarios (username, password, enabled) VALUES ('invitado', '$2a$10$tYTCR67.D4eKG1aeojw8huht9R/1RaplaDdqFFxt8/lFnsF97uIU2', 1)
 
-	
+INSERT INTO roles (nombre) VALUES ('ROLE_USER')
+INSERT INTO roles (nombre) VALUES ('ROLE_ADMIN')
+
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (1, 1)
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (2, 2)
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (2, 1)
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (2, 2)
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (3, 1)
+INSERT INTO usuarios_roles (usuario_id, role_id) VALUES (4, 1)
