@@ -1,7 +1,6 @@
 package com.github.dariozubaray.springboot.api.rest.auth;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.stereotype.Component;
-import com.github.dariozubaray.springboot.api.rest.models.entity.Role;
 import com.github.dariozubaray.springboot.api.rest.models.entity.Usuario;
 import com.github.dariozubaray.springboot.api.rest.models.services.IUsuarioService;
 
@@ -28,18 +26,9 @@ public class InfoAdicionalToken implements TokenEnhancer {
         info.put("nombre", usuario.getNombre());
         info.put("apellido", usuario.getApellido());
         info.put("email", usuario.getEmail());
-        info.put("roles", getRoles(usuario.getRoles()));
 
         ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
         return accessToken;
-    }
-
-    private String getRoles(List<Role> roles) {
-        String rolStr = "";
-        for (Role rol : roles) {
-            rolStr += rol.getName().concat(" - ");
-        }
-        return rolStr.substring(0, rolStr.length() - 3);
     }
 
 }
