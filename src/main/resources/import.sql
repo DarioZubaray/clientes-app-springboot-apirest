@@ -37,3 +37,17 @@ INSERT INTO user_authorities (user_id, role_id) VALUES (2, 1)
 INSERT INTO user_authorities (user_id, role_id) VALUES (2, 2)
 INSERT INTO user_authorities (user_id, role_id) VALUES (3, 1)
 INSERT INTO user_authorities (user_id, role_id) VALUES (4, 1)
+
+INSERT INTO productos (nombre, precio, create_at) VALUES ('Mini Teclado Inalambrico Tv Box Touchpad Smart Tv Iluminado', 850.0, NOW())
+INSERT INTO productos (nombre, precio, create_at) VALUES ('Joystick Ps4 Sony Inalambrico Original Dualshock 4 camuflado', 5199.0, NOW())
+INSERT INTO productos (nombre, precio, create_at) VALUES ('Traje Lluvia Moto Hevik Talle 3xl Negro Gris Alta Calidad', 2702.0, NOW())
+INSERT INTO productos (nombre, precio, create_at) VALUES ('Braun Bt3020 Recortadora De Barba 1 A 10mm 20 Posiciones', 1994.0, NOW())
+INSERT INTO productos (nombre, precio, create_at) VALUES ('Mochila Antirrobo Inteligente Impermeable Con Usb', 1599.0, NOW())
+INSERT INTO productos (nombre, precio, create_at) VALUES ('Disco De Estado Solido Ssd Kingston 480gb A400 2,5 Sata 3', 4499.0, NOW())
+
+INSERT INTO facturas (descripcion, observacion, cliente_id, create_at) VALUES ('Factura de pendientes', null, 1, NOW())
+INSERT INTO facturas_item (cantidad, factura_id, producto_id) VALUES (1, 1, 1)
+INSERT INTO facturas_item (cantidad, factura_id, producto_id) VALUES (2, 1, 3)
+INSERT INTO facturas_item (cantidad, factura_id, producto_id) VALUES (1, 1, 4)
+INSERT INTO facturas_item (cantidad, factura_id, producto_id) VALUES (1, 1, 6)
+
