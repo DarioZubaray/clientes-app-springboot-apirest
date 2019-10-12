@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,5 +41,11 @@ public class FacturaRestController {
     @ResponseStatus(code = HttpStatus.OK)
     public List<Producto> filtrarProductos(@PathVariable String termino) {
         return clienteService.findProductoByNombre(termino);
+    }
+
+    @PostMapping("/facturas")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public Factura crear(@RequestBody Factura factura) {
+        return clienteService.saveFactura(factura);
     }
 }
