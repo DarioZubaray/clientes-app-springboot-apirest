@@ -104,7 +104,7 @@ public class ClienteRestController {
         try {
             clienteCreado = clienteService.save(cliente);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la actualización en la BD");
+            response.put("mensaje", "Error al ejecutar la actualización de cliente en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -134,7 +134,7 @@ public class ClienteRestController {
         try {
             clienteDB = clienteService.findById(id);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la consulta en la BD");
+            response.put("mensaje", "Error al ejecutar la consulta de cliente en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -161,7 +161,7 @@ public class ClienteRestController {
         try {
             clienteActualizado = clienteService.save(clienteDB);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la actualización en la BD");
+            response.put("mensaje", "Error al ejecutar la actualización de cliente en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -183,7 +183,7 @@ public class ClienteRestController {
 
             clienteService.delete(id);
         } catch (DataAccessException e) {
-            response.put("mensaje", "Error al ejecutar la eliminación en la BD");
+            response.put("mensaje", "Error al ejecutar la eliminación de cliente en la BD");
             response.put("error", e.getMessage().concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
